@@ -57,7 +57,7 @@ public class Dbg {
 	
 	// these events are provided in case you want to set-up something like 
 	// a file logger or print the logs onscreen... WATCH OUT FOR RECURSION, 
-	// make sure that the event handler does not use ZDebug to log something 
+	// make sure that the event handler does not use Dbg to log something 
 	// else while in your event handler
 	public static event System.EventHandler<DbgEventArgs> OnSetDebugChannel;
 	public static event System.EventHandler<DbgEventArgs> OnLog;
