@@ -1,0 +1,22 @@
+Dbg is a utility to log debug output and is designed to work within the Unity3D editor's Console
+
+By using [Conditional("UNITY_EDITOR")], it allows debug log calls to be "stripped" away 
+when building to the target platform.
+ 
+Dbg is also designed around logging to a channel so that user can selectively watch
+the channel that they are interested in.
+ 
+Example Usage:
+
+on a Start() or Awake() method call
+     Dbg.SetDebugChannel(Dbg.eChannelType.PLAYER, true);  // this will turn on the PLAYER channel
+
+now one can call:
+     Dbg.Log(Dbg.eChannelType.PLAYER, "display something that can help you debug" );
+     Dbg.LogMethodCall(Dbg.eChannelType.PLAYER);          // to log the method you are in
+     Dbg.Assert( needsToBeTrue, "ok, we got an assert");  // this will pause the editor if needsToBeTrue is false
+ 
+original author: joseph.laurino@paradessagames.com
+
+feel free to use this file :)
+
